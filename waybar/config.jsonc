@@ -1,0 +1,114 @@
+{
+	"layer": "top",
+	"position": "top", 
+	"height": 40,
+	"modules-left": ["custom/distro", "custom/swww", "tray", "memory", "cpu", "custom/screenshot"],
+    "modules-center": ["hyprland/workspaces"],
+	"modules-right": ["custom/cliphist", "clock", "hyprland/language", "pulseaudio", "custom/swaylock", "battery", "custom/notify"],
+
+    "custom/distro": {
+        "format": "<span font='CascadiaCodeNF' size='large'>󰣨</span>",
+        "tooltip": false
+    },
+
+    "custom/cliphist": {
+        "format": "<span font='CascadiaCodeNF' size='large'>󱘙</span>",
+        "tooltip": false,
+        "on-click": "cliphist list | wofi --dmenu | cliphist decode | wl-copy",
+    },
+
+    "custom/screenshot": {
+        "format": "<span font='CascadiaCodeNF' size='large'>󰄀</span>",
+        "tooltip": false,
+        "on-click": "hyprshot -m output",
+    },
+    "custom/swww": {
+	"format": "<span font='CascadiaCodeNF' size='large'></span>",
+	"tooltip": false,
+	"on-click": "swww img ~/Pictures/evening-sky.png --transition-type wipe",
+	"on-click-right": "swww img ~/Pictures/aleksandr-popov-UUJzCuHUfYI-unsplash.jpg --transition-type wipe",
+	"on-click-middle": "swww img ~/Pictures/wallhaven-28v3mm.jpg --transition-type wipe",
+    },
+
+    "custom/swaylock": {
+        "format": "<span font='CascadiaCodeNF' size='large'>󰌾</span>",
+        "tooltip": false,
+	"on-click": "swaylock",
+    },
+
+    "custom/notify": {
+        "format": "<span font='CascadiaCodeNF' size='large'></span>",
+        "tooltip": false,
+        "on-click": "swaync-client -t",
+    },
+
+     "hyprland/language": {
+	"format": "{}",
+        "format-ru": "ru",
+	"format-en": "us",
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "<span font='CascadiaCodeNF'>{icon}</span>",
+        "format-icons": {
+            "default": "<span color='#f5e0dc'></span>",
+            "active": "<span color='#1e1e2e'></span>",
+            "urgent": "<span color='#f5e0dc'>󰗖</span>",
+            "empty": "<span color='#f5e0dc'></span>"
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+    "tray": {
+		"icon-size": 18,
+		"spacing": 10,
+        "tooltip": false
+	},
+    "clock": {
+        "format": "<span font='CascadiaCodeNF' size='large' rise='-1500' color='#cdd6f4'>󱑎</span> {:%R}",
+        "format-alt": "<span font='CascadiaCodeNF' size='large' rise='-1500' color='#cdd6f4'>󱑎</span> {:%A, %d. %b, %Y}"
+    },
+    "pulseaudio": {
+        "format": "<span font='CascadiaCodeNF' size='large' rise='-1500' color='#38A89D'></span> <span rise='-200'>{volume}%</span>",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 1,
+        "format": "<span font='CascadiaCodeNF' color='#9071C9'>󰍛</span> <span rise='-200'>{}%</span>",
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "<span font='CascadiaCodeNF' color='#519aba'></span> <span rise='-200'>{usage}%</span>",
+        "tooltip": false
+    },
+
+    "custom/nwgbar": {
+        "format": "<span font='CascadiaCodeNF' size='large'>⏻</span>",
+        "on-click": "nwg-bar",
+        "tooltip": false
+    },
+
+    "battery": {
+  "states": { "good": 60, "warning": 20, "critical": 10 },
+   "format":          "{icon} {capacity}%",
+   // "tooltip-format":  "{capacity}%, {status}",
+   "format-plugged":  "{capacity}% ",
+   "format-charging": "{capacity}% ↑",
+   "format-not-charging": "",  
+   "format-icons": ["", // dying
+                    "", // 
+                    "", //
+                    "", //
+                    ""],//full
+     },
+
+}
